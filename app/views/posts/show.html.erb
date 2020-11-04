@@ -1,0 +1,15 @@
+<h1><%=@post.title%></h1>
+
+<h4>Content: <%=@post.content%></h4>
+
+<h3>Likes: <%=@post.likes%></h3>
+<h4>Author: <%=link_to @post.blogger.name, blogger_path(@post.blogger)%></h4>
+
+<h4>Destination: <%= link_to @post.destination.name, destination_path(@post.destination)%></h4>
+
+<%= button_to 'Like', action: "liked"%>
+
+<%#you can use button_to or link_to here the working code for that is on line 14%>
+<%#for using link_to, this requires a get request rather than a post request in the routes%>
+<%#= link_to 'Like', action: 'liked'%>
+

@@ -1,0 +1,13 @@
+<h1><%=@destination.name%></h1>
+<h2>Country: <%=@destination.country%></h2>
+
+<h4>Most recent 5 post</h4>
+<% @destination.recent_5_posts.each do |post|%>
+    <ul><%=post.title%></ul>
+<%end%>
+
+<h4>Feature Post</h4>
+<%=link_to @destination.post_with_most_likes.title, post_path(@destination.post_with_most_likes)%>
+
+<h4>Avg Age</h4>
+<%=@destination.avg_age%>
